@@ -3,6 +3,7 @@ import helmet from "helmet";
 import cors from "cors";
 import {Env} from "./config/env.js";
 import {connectDB} from "./config/db.js";
+import productRoute from "./routes/product.route.js";
 
 const app = express();
 
@@ -18,16 +19,11 @@ app.use(cors());
 
 
 // Routes
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Hello World!',
-        status: 200,
-    })
-})
-
+app.use("/api/products", productRoute);
 app.use((req, res) => {
     res.status(404).send('Not Found');
 });
+
 
 app.listen(Env.PORT, () => {
     console.log(`Server started on http://localhost:${Env.PORT}`);
