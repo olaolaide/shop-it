@@ -1,0 +1,28 @@
+{
+  "name": "shop-it",
+  "version": "1.0.0",
+  "description": "A simple shop application built using express.js and react.js",
+  "homepage": "https://github.com/olaolaide/shop-it#readme",
+  "bugs": {
+    "url": "https://github.com/olaolaide/shop-it/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olaolaide/shop-it.git"
+  },
+  "license": "ISC",
+  "author": "Ola Olaide",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch backend/app.js",
+    "start": "node backend/app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "mongoose": "^9.11.0"
+  }
+}
