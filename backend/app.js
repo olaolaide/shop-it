@@ -25,6 +25,9 @@ app.get('/', (req, res) => {
     })
 })
 
+app.all('*', (req, res) => {
+    res.status(404).send('Not Found');
+})
 
 app.listen(Env.PORT, () => {
     console.log(`Server started on http://localhost:${Env.PORT}`);
