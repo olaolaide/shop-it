@@ -1,5 +1,22 @@
 import mongoose from 'mongoose'
 
+// @ts-check
+/**
+ * Product Schema
+ * @typedef {Object} Product
+ * @property {string} name - The name of the product
+ * @property {number} price - The price of the product
+ * @property {Array<Object>} images - The images of the product
+ * @property {string} description - The description of the product
+ * @property {number} ratings - The ratings of the product
+ * @property {string} category - The category of the product
+ * @property {string} seller - The seller of the product
+ * @property {number} stock - The stock of the product
+ * @property {number} noOfReviews - The number of reviews for the product
+ * @property {Array<Object>} reviews - The reviews for the product
+ * @property {mongoose.Schema.Types.ObjectId} user - The user who added the product
+ */
+/** @type {mongoose.Schema<Product>} */
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -103,6 +120,7 @@ const productSchema = new mongoose.Schema({
     }
 }, {timestamps: true})
 
+/** @type {import("mongoose").Model<Product>} */
 const productModel = new mongoose.model('Product', productSchema)
 
 export default productModel
